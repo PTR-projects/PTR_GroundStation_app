@@ -1,0 +1,25 @@
+name: "Build and test"
+
+on:
+  - workflow_dispatch
+  - push
+  - pull_request
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            runtime: linux-x64
+          - os: windows-latest
+            runtime: win-x64
+    name: "Build"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: dotnet publish -c Release --self-contained -r ${{ matrix.runtime }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ground-station-application_${{ matrix.runtime }}
+          path: src/bin/Release/net8.0/${{ matrix.runtime }}/publish
