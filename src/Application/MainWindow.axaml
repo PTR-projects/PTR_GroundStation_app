@@ -1,9 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="PTR.GroundStation.MainWindow"
-        Title="PTR Ground Station Application">
-    Welcome to Ground Station App!
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="PTR.GroundStation.MainWindow" Title="PTR Ground Station Application">
+    <SplitView IsPaneOpen="True" CompactPaneLength="100" OpenPaneLength="250">
+        <SplitView.Pane>
+            <Grid ColumnDefinitions="100,*">
+                <StackPanel Grid.Column="0">
+                    <Button Name="SettingsButton" Content="Settings" />
+                    <Button Name="RocketsButton" Content="Rockets" />
+                    <Button Name="LogsButton" Content="Logs" />
+                </StackPanel>
+                <ContentControl Name="PaneContentArea" Grid.Column="1" />
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <TextBlock Text="Content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </SplitView.Content>
+    </SplitView>
 </Window>
