@@ -1,6 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using System;
 using System.Collections.Generic;
 
@@ -11,6 +9,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
         Activated += (_, __) =>
         {
             Program.Stopwatch.Stop();
@@ -22,10 +21,14 @@ public partial class MainWindow : Window
                 { "LogsButton", new LogsPane() },
                 { "SettingsButton", new SettingsPane() }
             };
-            foreach(var buttonName in buttonsPaneMap.Keys)
+            foreach (var buttonName in buttonsPaneMap.Keys)
             {
-                this.FindControl<Button>(buttonName).Click += (_, __) => this.FindControl<ContentControl>("PaneContentArea").Content = buttonsPaneMap[buttonName];
+                this.FindControl<Button>(buttonName)!.Click += (_, __) => this.FindControl<ContentControl>("PaneContentArea")!.Content = buttonsPaneMap[buttonName];
             }
+
+            this.FindControl<ContentControl>("LeftContent")!.Content = new MapContent();
+            this.FindControl<ContentControl>("RightTopContent")!.Content = new RealtimeDataContent();
+            this.FindControl<ContentControl>("RightBottomContent")!.Content = new PlotsContent();
         };
     }
 }

@@ -6,7 +6,8 @@ namespace PTR.GroundStation;
 
 class Program
 {
-    static Program() {
+    static Program()
+    {
         Stopwatch.Start();
     }
 

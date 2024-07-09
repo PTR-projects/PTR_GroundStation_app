@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace PTR.GroundStation
 {
-    public partial class LogsPane : UserControl
+    public partial class MapContent: UserControl
     {
-        public LogsPane()
+        public MapContent()
         {
             InitializeComponent();
         }
