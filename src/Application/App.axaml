@@ -8,5 +8,6 @@
     <Application.Styles>
         <semi:SemiTheme Locale="en-us" />
         <StyleInclude Source="../Styles/Application.axaml"/>
+        <StyleInclude Source="../Styles/Icons.axaml"/>
     </Application.Styles>
 </Application>

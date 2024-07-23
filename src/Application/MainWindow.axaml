@@ -2,20 +2,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="clr-namespace:PTR.GroundStation.Controls"
-    mc:Ignorable="d"
-    d:DesignWidth="800"
-    d:DesignHeight="450"
-    x:Class="PTR.GroundStation.MainWindow"
-    Title="PTR Ground Station Application"
-    >
+    xmlns:controls="clr-namespace:PTR.GroundStation.Controls" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="PTR.GroundStation.MainWindow" Title="PTR Ground Station Application">
     <SplitView IsPaneOpen="True" DisplayMode="CompactInline" CompactPaneLength="100" OpenPaneLength="250">
         <SplitView.Pane>
             <Grid ColumnDefinitions="100,*">
                 <StackPanel Grid.Column="0">
-                    <Button Name="SettingsButton" Content="Settings" />
-                    <Button Name="RocketsButton" Content="Rockets" />
-                    <Button Name="LogsButton" Content="Logąs" />
+                    <Button Name="SettingsButton">
+                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource cogs}" />
+                    </Button>
+                    <Button Name="RocketsButton">
+                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource rocket-launch}" />
+                    </Button>
+                    <Button Name="LogsButton">
+                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource content-save-cog}" />
+                    </Button>
                 </StackPanel>
                 <ContentControl Name="PaneContentArea" Background="Blue" Grid.Column="1" />
             </Grid>
