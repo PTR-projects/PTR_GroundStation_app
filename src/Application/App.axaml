@@ -1,8 +1,12 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="PTR.GroundStation.App"
-             RequestedThemeVariant="Default">
+<Application
+            x:Class="PTR.GroundStation.App"
+            xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:semi="https://irihi.tech/semi"
+            RequestedThemeVariant="Light"
+            >
     <Application.Styles>
-        <FluentTheme />
+        <semi:SemiTheme Locale="en-us" />
+        <StyleInclude Source="../Styles/Application.axaml"/>
     </Application.Styles>
 </Application>
