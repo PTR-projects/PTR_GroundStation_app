@@ -12,16 +12,19 @@
       );
   in {
     formatter = forEachSupportedSystem (pkgs: pkgs.alejandra);
-    devShells = forEachSupportedSystem (pkgs: {
+    devShells = forEachSupportedSystem (pkgs: let
+      selectPackages = pkgs:
+        with pkgs; [
+          dotnet-sdk_8
+          omnisharp-roslyn
+          msbuild
+          mavproxy
+          dos2unix
+        ];
+    in {
       default = with pkgs;
         mkShell {
-          packages = [
-            dotnet-sdk_8
-            omnisharp-roslyn
-            msbuild
-            mavproxy
-            dos2unix
-          ];
+          packages = selectPackages pkgs;
           env = {
             DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
             LD_LIBRARY_PATH = lib.makeLibraryPath [
@@ -34,6 +37,12 @@
             ];
           };
         };
+      fhs =
+        (pkgs.buildFHSUserEnv {
+          name = "fhs-shell";
+          targetPkgs = selectPackages;
+        })
+        .env;
     });
   };
 }
