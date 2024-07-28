@@ -1,13 +1,19 @@
-<Application
-            x:Class="PTR.GroundStation.App"
-            xmlns="https://github.com/avaloniaui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:semi="https://irihi.tech/semi"
-            RequestedThemeVariant="Light"
-            >
+<Application xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:semi="https://irihi.tech/semi"
+    x:Class="PTR.GroundStation.App"
+    RequestedThemeVariant="Light">
     <Application.Styles>
         <semi:SemiTheme Locale="en-us" />
-        <StyleInclude Source="../Styles/Application.axaml"/>
-        <StyleInclude Source="../Styles/Icons.axaml"/>
+        <StyleInclude Source="../Styles/ApplicationStyles.axaml" />
+        <StyleInclude Source="../Styles/Icons.axaml" />
     </Application.Styles>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="../Styles/ApplicationDimensions.axaml" />
+                <ResourceInclude Source="../Locale/en_US.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

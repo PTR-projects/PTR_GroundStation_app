@@ -1,0 +1,31 @@
+<Styles xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="../Styles/ApplicationDimensions.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+    <Style Selector="TextBlock.h1">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="GridSplitter">
+        <Setter Property="MinHeight" Value="2" />
+        <Setter Property="MinWidth" Value="2" />
+        <Setter Property="GridSplitter.Padding" Value="0" />
+    </Style>
+    <Style Selector="StackPanel.SidebarContentContainer > ContentControl">
+        <Setter Property="Padding" Value="8" />
+    </Style>
+    <Style Selector=".SidebarControl">
+        <Style Selector="^ Button">
+            <Setter Property="Height" Value="{StaticResource MainSidebarCompactWidth}" />
+            <Setter Property="Width" Value="{StaticResource MainSidebarCompactWidth}" />
+            <Style Selector="^ PathIcon">
+                <Setter Property="Width" Value="32" />
+            </Style>
+        </Style>
+    </Style>
+</Styles>

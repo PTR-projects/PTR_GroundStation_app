@@ -2,27 +2,42 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="clr-namespace:PTR.GroundStation.Controls" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="PTR.GroundStation.MainWindow" Title="PTR Ground Station Application">
-    <SplitView IsPaneOpen="True" DisplayMode="CompactInline" CompactPaneLength="100" OpenPaneLength="250">
+    xmlns:controls="clr-namespace:PTR.GroundStation.Controls"
+    mc:Ignorable="d"
+    x:Class="PTR.GroundStation.MainWindow"
+    Title="PTR Ground Station Application">
+    <SplitView IsPaneOpen="True"
+        Name="MainSidebar"
+        DisplayMode="CompactInline"
+        CompactPaneLength="{StaticResource MainSidebarCompactWidth}"
+        OpenPaneLength="{StaticResource MainSidebarOpenWidth}">
         <SplitView.Pane>
-            <Grid ColumnDefinitions="100,*">
-                <StackPanel Grid.Column="0">
-                    <Button Name="SettingsButton">
-                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource cogs}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{StaticResource MainSidebarColumnWidth}" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Classes="SidebarControl" Grid.Column="0">
+                    <Button Name="SettingsButton"
+                        ToolTip.Tip="{DynamicResource Text.SettingsTooltip}">
+                        <PathIcon Data="{StaticResource cogs}" />
                     </Button>
                     <Button Name="RocketsButton">
-                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource rocket-launch}" />
+                        <PathIcon Data="{StaticResource rocket-launch}" />
                     </Button>
                     <Button Name="LogsButton">
-                        <PathIcon Foreground="{DynamicResource SemiRed6}" Data="{StaticResource content-save-cog}" />
+                        <PathIcon Data="{StaticResource content-save-cog}" />
                     </Button>
                 </StackPanel>
-                <ContentControl Name="PaneContentArea" Background="Blue" Grid.Column="1" />
+                <StackPanel Classes="SidebarContentContainer" Grid.Column="1">
+                    <ContentControl Name="MainSidebarContent" />
+                </StackPanel>
             </Grid>
         </SplitView.Pane>
         <Grid ColumnDefinitions="*, auto, *">
             <ContentControl Grid.Column="0" Name="LeftContent" />
-            <GridSplitter Grid.Column="1" ResizeDirection="Columns" Margin="0" GridSplitter.Padding="0"/>
+            <GridSplitter Grid.Column="1" ResizeDirection="Columns" Margin="0"
+                GridSplitter.Padding="0" />
             <Grid Grid.Column="2" RowDefinitions="*, auto, *">
                 <ContentControl Grid.Row="0" Name="RightTopContent" />
                 <GridSplitter Grid.Row="1" ResizeDirection="Rows" Margin="0" />

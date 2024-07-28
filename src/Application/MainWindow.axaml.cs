@@ -23,7 +23,7 @@ public partial class MainWindow : Window
             };
             foreach (var buttonName in buttonsPaneMap.Keys)
             {
-                this.FindControl<Button>(buttonName)!.Click += (_, __) => this.FindControl<ContentControl>("PaneContentArea")!.Content = buttonsPaneMap[buttonName];
+                this.FindControl<Button>(buttonName)!.Click += (_, __) => this.FindControl<ContentControl>("MainSidebarContent")!.Content = buttonsPaneMap[buttonName];
             }
 
             this.FindControl<ContentControl>("LeftContent")!.Content = new MapContent();
