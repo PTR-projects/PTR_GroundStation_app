@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="PTR.GroundStation.Views.SettingsPane">
+    <Border Classes="SidebarPane">
+        <StackPanel>
+            <TextBlock Classes="H1">Settings</TextBlock>
+            <TextBlock Classes="H2">Connection</TextBlock>
+            <Label Target="{Binding ElementName=SerialPortTextBox}">Serial port</Label>
+            <TextBox Name="SerialPortTextBox" />
+            <Label Target="{Binding ElementName=SerialBaudrateTextBox}">Baudrate</Label>
+            <TextBox Name="SerialBaudrateTextBox" />
+
+            <TextBlock Classes="H2">Apperance</TextBlock>
+            <CheckBox>Show Map</CheckBox>
+            <CheckBox>Show Realtime Data</CheckBox>
+            <CheckBox>Show Plots</CheckBox>
+        </StackPanel>
+    </Border>
+</UserControl>

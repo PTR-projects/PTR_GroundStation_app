@@ -1,0 +1,12 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="PTR.GroundStation.Views.LogsPane">
+    <Border Classes="SidebarPane">
+        <StackPanel>
+            <TextBlock Classes="H1">Logs</TextBlock>
+            <CheckBox>Log data to file</CheckBox>
+            <Label Target="{Binding ElementName=LogsFilePathTextBox}">Logs file path</Label>
+            <TextBox Name="LogsFilePathTextBox" />
+        </StackPanel>
+    </Border>
+</UserControl>

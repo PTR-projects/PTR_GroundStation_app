@@ -1,5 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    x:Class="PTR.GroundStation.PlotsContent">
-    Plots
+    x:Class="PTR.GroundStation.Views.MapContent">
+    Map
+    Map
+    aąęπ↓ółśćżź
 </UserControl>

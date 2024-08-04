@@ -1,4 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <x:String x:Key="Text.SettingsTooltip">Settings</x:String>
+    <x:String x:Key="Text.RocketsTooltip">Rockets</x:String>
+    <x:String x:Key="Text.LogsTooltip">Logs</x:String>
 </ResourceDictionary>

@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="PTR.GroundStation.Views.RocketsPane"
+    xmlns:vm="using:PTR.GroundStation.ViewModels"
+    x:DataType="vm:RocketsPaneViewModel">
+    <Border Classes="SidebarPane">
+        <StackPanel>
+            <TextBlock Classes="H1">Rockets</TextBlock>
+            <DataGrid ItemsSource="{Binding Rockets}"
+                AutoGenerateColumns="True" IsReadOnly="True"
+                GridLinesVisibility="All"
+                BorderThickness="1" BorderBrush="Gray" />
+        </StackPanel>
+    </Border>
+</UserControl>

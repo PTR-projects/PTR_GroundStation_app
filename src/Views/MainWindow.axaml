@@ -2,9 +2,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="clr-namespace:PTR.GroundStation.Controls"
     mc:Ignorable="d"
-    x:Class="PTR.GroundStation.MainWindow"
+    x:Class="PTR.GroundStation.Views.MainWindow"
     Title="PTR Ground Station Application">
     <SplitView IsPaneOpen="True"
         Name="MainSidebar"
@@ -20,13 +19,15 @@
                 <StackPanel Classes="SidebarControl" Grid.Column="0">
                     <Button Name="SettingsButton"
                         ToolTip.Tip="{DynamicResource Text.SettingsTooltip}">
-                        <PathIcon Data="{StaticResource cogs}" />
+                        <PathIcon Data="{StaticResource Icon.Cogs}" />
                     </Button>
-                    <Button Name="RocketsButton">
-                        <PathIcon Data="{StaticResource rocket-launch}" />
+                    <Button Name="RocketsButton"
+                        ToolTip.Tip="{DynamicResource Text.RocketsTooltip}">
+                        <PathIcon Data="{StaticResource Icon.RocketLaunch}" />
                     </Button>
-                    <Button Name="LogsButton">
-                        <PathIcon Data="{StaticResource content-save-cog}" />
+                    <Button Name="LogsButton"
+                        ToolTip.Tip="{DynamicResource Text.LogsTooltip}">
+                        <PathIcon Data="{StaticResource Icon.ContentSaveCog}" />
                     </Button>
                 </StackPanel>
                 <StackPanel Classes="SidebarContentContainer" Grid.Column="1">

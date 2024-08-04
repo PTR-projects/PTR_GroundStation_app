@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace PTR.GroundStation
+namespace PTR.GroundStation.Views
 {
     public partial class MapContent: UserControl
     {

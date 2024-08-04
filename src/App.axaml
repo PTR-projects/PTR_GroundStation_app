@@ -4,7 +4,8 @@
     x:Class="PTR.GroundStation.App"
     RequestedThemeVariant="Light">
     <Application.Styles>
-        <semi:SemiTheme Locale="en-us" />
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
         <StyleInclude Source="../Styles/ApplicationStyles.axaml" />
         <StyleInclude Source="../Styles/Icons.axaml" />
     </Application.Styles>

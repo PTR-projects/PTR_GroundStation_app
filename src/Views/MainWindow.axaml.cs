@@ -2,7 +2,7 @@ using Avalonia.Controls;
 using System;
 using System.Collections.Generic;
 
-namespace PTR.GroundStation;
+namespace PTR.GroundStation.Views;
 
 public partial class MainWindow : Window
 {

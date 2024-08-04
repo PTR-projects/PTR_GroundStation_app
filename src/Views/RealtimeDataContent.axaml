@@ -1,7 +1,5 @@
 <UserControl xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    x:Class="PTR.GroundStation.MapContent">
-    Map
-    Map
-    aąęπ↓ółśćżź
+    x:Class="PTR.GroundStation.Views.RealtimeDataContent">
+    RealTimeContent
 </UserControl>
