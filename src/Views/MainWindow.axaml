@@ -8,12 +8,12 @@
     <SplitView IsPaneOpen="True"
         Name="MainSidebar"
         DisplayMode="CompactInline"
-        CompactPaneLength="{StaticResource MainSidebarCompactWidth}"
-        OpenPaneLength="{StaticResource MainSidebarOpenWidth}">
+        CompactPaneLength="{StaticResource Dimension.MainSidebarCompactWidth}"
+        OpenPaneLength="{StaticResource Dimension.MainSidebarOpenWidth}">
         <SplitView.Pane>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{StaticResource MainSidebarColumnWidth}" />
+                    <ColumnDefinition Width="{StaticResource Dimension.MainSidebarColumnWidth}" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Classes="SidebarControl" Grid.Column="0">

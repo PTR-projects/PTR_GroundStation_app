@@ -1,14 +1,13 @@
 using Avalonia.Controls;
 using PTR.GroundStation.ViewModels;
 
-namespace PTR.GroundStation.Views
+namespace PTR.GroundStation.Views;
+
+public partial class RocketsPane : UserControl
 {
-    public partial class RocketsPane: UserControl
+    public RocketsPane()
     {
-        public RocketsPane()
-        {
-            InitializeComponent();
-            DataContext = new RocketsPaneViewModel(); 
-        }
+        InitializeComponent();
+        DataContext = new RocketsPaneViewModel();
     }
 }

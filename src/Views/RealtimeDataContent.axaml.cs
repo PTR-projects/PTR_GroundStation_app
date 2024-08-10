@@ -1,12 +1,11 @@
 using Avalonia.Controls;
 
-namespace PTR.GroundStation.Views
+namespace PTR.GroundStation.Views;
+
+public partial class RealtimeDataContent : UserControl
 {
-    public partial class RealtimeDataContent : UserControl
+    public RealtimeDataContent()
     {
-        public RealtimeDataContent()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

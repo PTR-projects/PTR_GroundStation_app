@@ -1,12 +1,11 @@
 using Avalonia.Controls;
 
-namespace PTR.GroundStation.Views
+namespace PTR.GroundStation.Views;
+
+public partial class SettingsPane : UserControl
 {
-    public partial class SettingsPane : UserControl
+    public SettingsPane()
     {
-        public SettingsPane()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

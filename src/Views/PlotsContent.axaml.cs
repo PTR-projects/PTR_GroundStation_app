@@ -1,12 +1,13 @@
 using Avalonia.Controls;
+using PTR.GroundStation.ViewModels;
 
-namespace PTR.GroundStation.Views
+namespace PTR.GroundStation.Views;
+
+public partial class PlotsContent : UserControl
 {
-    public partial class PlotsContent : UserControl
+    public PlotsContent()
     {
-        public PlotsContent()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        DataContext = new PlotsViewModel();
     }
 }

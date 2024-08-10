@@ -2,14 +2,46 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="PTR.GroundStation.Views.RocketsPane"
     xmlns:vm="using:PTR.GroundStation.ViewModels"
+    xmlns:Controls="clr-namespace:Avalonia.Controls.ColorViewTab"
     x:DataType="vm:RocketsPaneViewModel">
     <Border Classes="SidebarPane">
         <StackPanel>
             <TextBlock Classes="H1">Rockets</TextBlock>
             <DataGrid ItemsSource="{Binding Rockets}"
-                AutoGenerateColumns="True" IsReadOnly="True"
-                GridLinesVisibility="All"
-                BorderThickness="1" BorderBrush="Gray" />
+                CanUserSortColumns="False"
+            >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="ID"
+                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate DataType="vm:Rocket">
+                                <TextBox Text="{Binding Identifier}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Name" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate DataType="vm:Rocket">
+                                <TextBox Text="{Binding Name}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Color"
+                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate DataType="vm:Rocket">
+                                <ColorPicker />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Header="Map" Binding="{Binding ShowOnMap}"
+                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
+                    <DataGridCheckBoxColumn Header="Plot" Binding="{Binding ShowOnPlot}"
+                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
+                    <DataGridCheckBoxColumn Header="Data" Binding="{Binding ShowOnRealtime}"
+                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Border>
 </UserControl>

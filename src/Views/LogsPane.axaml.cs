@@ -1,12 +1,11 @@
 using Avalonia.Controls;
 
-namespace PTR.GroundStation.Views
+namespace PTR.GroundStation.Views;
+
+public partial class LogsPane : UserControl
 {
-    public partial class LogsPane : UserControl
+    public LogsPane()
     {
-        public LogsPane()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
