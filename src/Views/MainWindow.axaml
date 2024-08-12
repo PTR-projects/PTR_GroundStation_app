@@ -5,7 +5,7 @@
     mc:Ignorable="d"
     x:Class="PTR.GroundStation.Views.MainWindow"
     Title="PTR Ground Station Application">
-    <SplitView IsPaneOpen="True"
+    <SplitView
         Name="MainSidebar"
         DisplayMode="CompactInline"
         CompactPaneLength="{StaticResource Dimension.MainSidebarCompactWidth}"
@@ -42,7 +42,7 @@
             <Grid Grid.Column="2" RowDefinitions="*, auto, *">
                 <ContentControl Grid.Row="0" Name="RightTopContent" />
                 <GridSplitter Grid.Row="1" ResizeDirection="Rows" Margin="0" />
-                <ContentControl Grid.Row="2" Name="RightBottomContent" Background="yellow" />
+                <ContentControl Grid.Row="2" Name="RightBottomContent" />
             </Grid>
         </Grid>
     </SplitView>

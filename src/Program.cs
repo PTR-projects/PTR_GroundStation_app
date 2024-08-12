@@ -9,10 +9,14 @@ class Program
 {
     static Program()
     {
+#if DEBUG
         Stopwatch.Start();
+#endif
     }
 
+#if DEBUG
     public static Stopwatch Stopwatch = new Stopwatch();
+#endif
 
     // Initialization code. Don't use any Avalonia, third-party APIs or any
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized

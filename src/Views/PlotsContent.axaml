@@ -5,6 +5,7 @@
     x:Class="PTR.GroundStation.Views.PlotsContent"
     x:DataType="vm:PlotsViewModel">
     <lvc:CartesianChart
+        EasingFunction="{x:Null}"
         Series="{Binding Series}">
     </lvc:CartesianChart>
 </UserControl>

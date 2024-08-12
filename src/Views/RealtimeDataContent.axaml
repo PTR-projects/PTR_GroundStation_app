@@ -1,5 +1,22 @@
 <UserControl xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    x:Class="PTR.GroundStation.Views.RealtimeDataContent">
-    RealTimeContent
+    x:Class="PTR.GroundStation.Views.RealtimeDataContent"
+    xmlns:vm="using:PTR.GroundStation.ViewModels"
+    xmlns:Controls="clr-namespace:Avalonia.Controls.ColorViewTab"
+    x:DataType="vm:RealtimeDataViewModel">
+    <Border Classes="MainContent">
+        <StackPanel>
+            <TextBlock Classes="H1">Rockets</TextBlock>
+            <DataGrid ItemsSource="{Binding Rockets}"
+                CanUserReorderColumns="True"
+            >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude}" />
+                    <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" />
+                    <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Border>
 </UserControl>
