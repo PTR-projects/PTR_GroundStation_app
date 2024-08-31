@@ -10,6 +10,7 @@
             <DataGrid ItemsSource="{Binding Rockets}"
                 CanUserSortColumns="False"
             >
+                <!-- TODO: Move the show options to a collapsible panel -->
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="ID"
                         Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}">

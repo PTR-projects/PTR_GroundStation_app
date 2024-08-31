@@ -6,11 +6,12 @@
     x:DataType="vm:RealtimeDataViewModel">
     <Border Classes="MainContent">
         <StackPanel>
-            <TextBlock Classes="H1">Rockets</TextBlock>
             <DataGrid ItemsSource="{Binding Rockets}"
                 CanUserReorderColumns="True"
+                IsReadOnly="True"
             >
                 <DataGrid.Columns>
+                    <!-- TODO: Make data selectable -->
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                     <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude}" />
                     <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" />
