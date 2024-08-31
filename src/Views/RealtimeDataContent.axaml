@@ -9,13 +9,14 @@
             <DataGrid ItemsSource="{Binding Rockets}"
                 CanUserReorderColumns="True"
                 IsReadOnly="True"
+                ClipboardCopyMode="ExcludeHeader"
             >
                 <DataGrid.Columns>
                     <!-- TODO: Make data selectable -->
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude}" />
-                    <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" />
-                    <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" />
+                    <DataGridTextColumn Header="Altitude [m]" Binding="{Binding Altitude}" />
+                    <DataGridTextColumn Header="Longitude [°]" Binding="{Binding Longitude}" />
+                    <DataGridTextColumn Header="Latitude [°]" Binding="{Binding Latitude}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

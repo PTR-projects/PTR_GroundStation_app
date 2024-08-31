@@ -9,6 +9,7 @@
             <TextBlock Classes="H1">Rockets</TextBlock>
             <DataGrid ItemsSource="{Binding Rockets}"
                 CanUserSortColumns="False"
+                RowDetailsVisibilityMode="VisibleWhenSelected"
             >
                 <!-- TODO: Move the show options to a collapsible panel -->
                 <DataGrid.Columns>
@@ -35,13 +36,16 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridCheckBoxColumn Header="Map" Binding="{Binding ShowOnMap}"
-                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
-                    <DataGridCheckBoxColumn Header="Plot" Binding="{Binding ShowOnPlot}"
-                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
-                    <DataGridCheckBoxColumn Header="Data" Binding="{Binding ShowOnRealtime}"
-                        Width="{StaticResource Dimension.RocketsPaneSmallColumnWidth}" />
                 </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <CheckBox>Show on Map</CheckBox>
+                            <CheckBox>Show on Plot</CheckBox>
+                            <CheckBox>Show on Realtime data</CheckBox>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
             </DataGrid>
         </StackPanel>
     </Border>
